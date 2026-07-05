@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Valeurs de repli des tokens de thème (canaux RGB « R G B »).
+ * Le thème réel (clair/sombre) est appliqué au runtime par le View racine via
+ * `vars()` (voir src/lib/theme-vars.ts), qui suit l'apparence du système.
+ * Ce `:root` ne sert que de fallback pour tout élément hors de ce sous-arbre.
+ */
+@layer base {
+  :root {
+    --canvas: 255 255 255;
+    --background: 246 247 249;
+    --surface: 255 255 255;
+    --surface-2: 241 243 246;
+    --surface-3: 232 235 240;
+    --border: 226 231 238;
+    --border-soft: 238 241 245;
+    --primary: 22 163 74;
+    --primary-dark: 21 128 61;
+    --primary-soft: 220 252 231;
+    --ink: 15 23 42;
+    --muted: 100 116 139;
+    --subtle: 148 163 184;
+    --danger: 220 38 38;
+    --warning: 217 119 6;
+    --info: 37 99 235;
+    --purple: 124 58 237;
+    --pink: 219 39 119;
+  }
+}

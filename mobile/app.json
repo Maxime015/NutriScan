@@ -1,0 +1,60 @@
+{
+  "expo": {
+    "name": "NutriScan",
+    "slug": "nutriscan",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "nutriscan",
+    "userInterfaceStyle": "automatic",
+    "backgroundColor": "#0A0E1A",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.nutriscan.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "NutriScan utilise la caméra pour scanner les étiquettes d'ingrédients de vos aliments.",
+        "NSPhotoLibraryUsageDescription": "NutriScan accède à votre galerie pour importer une photo d'étiquette à analyser."
+      }
+    },
+    "android": {
+      "package": "com.nutriscan.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#0A0E1A",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "NutriScan utilise la caméra pour scanner les étiquettes d'ingrédients."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "NutriScan accède à votre galerie pour importer une photo d'étiquette."
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#0A0E1A",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 120
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
