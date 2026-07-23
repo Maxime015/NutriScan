@@ -165,6 +165,49 @@ export function useDeleteAnalysis() {
 }
 
 // ---------------------------------------------------------------------------
+// Suppression de compte (définitive)
+// ---------------------------------------------------------------------------
+/**
+ * Supprime les fichiers de l'utilisateur dans un bucket (best-effort).
+ * Le stockage n'est pas couvert par le cascade FK côté base : on le nettoie
+ * ici, tant que le JWT est encore valide (avant la suppression du compte).
+ */
+async function removeUserStorage(bucket: 'analysis-images' | 'avatars', userId: string) {
+  try {
+    const { data: files } = await supabase.storage.from(bucket).list(userId);
+    if (files?.length) {
+      await supabase.storage.from(bucket).remove(files.map((f) => `${userId}/${f.name}`));
+    }
+  } catch {
+    // Non bloquant : la suppression du compte prime.
+  }
+}
+
+/**
+ * Supprime définitivement le compte de l'utilisateur connecté.
+ * 1) Nettoie ses images de stockage (best-effort).
+ * 2) Appelle la RPC `delete_account` qui supprime la ligne `auth.users` ;
+ *    profil et historique sont alors supprimés en cascade (FK on delete cascade).
+ * L'appelant doit ensuite se déconnecter localement (le JWT est invalidé).
+ */
+export function useDeleteAccount() {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: async (userId: string) => {
+      await removeUserStorage('analysis-images', userId);
+      await removeUserStorage('avatars', userId);
+
+      const { error } = await supabase.rpc('delete_account');
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      // Vide tout le cache : plus aucune donnée de ce compte ne doit subsister.
+      qc.clear();
+    },
+  });
+}
+
+// ---------------------------------------------------------------------------
 // Profil
 // ---------------------------------------------------------------------------
 export function useUpdateProfile() {

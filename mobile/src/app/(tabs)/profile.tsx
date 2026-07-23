@@ -13,13 +13,14 @@ import {
   Ruler,
   Settings,
   Star,
+  Trash2,
   TrendingUp,
   User as UserIcon,
   UserCircle2,
   Weight,
 } from 'lucide-react-native';
 import { useState } from 'react';
-import { Alert, Modal, ScrollView, Switch, Text, View } from 'react-native';
+import { ActivityIndicator, Alert, Modal, ScrollView, Switch, Text, View } from 'react-native';
 import Animated, { FadeInDown, ZoomIn } from 'react-native-reanimated';
 
 import { Button } from '../../components/ui/Button';
@@ -29,7 +30,7 @@ import { PressableScale } from '../../components/ui/PressableScale';
 import { Screen } from '../../components/ui/Screen';
 import { StatCard } from '../../components/ui/StatCard';
 import { useAuth } from '../../lib/auth';
-import { useStats, useUpdateProfile } from '../../lib/queries';
+import { useDeleteAccount, useStats, useUpdateProfile } from '../../lib/queries';
 import { CONDITION_OPTIONS, cardShadow, colors, conditionLabel, useColors } from '../../lib/theme';
 import type { Profile } from '../../lib/types';
 
@@ -43,6 +44,7 @@ export default function ProfileScreen() {
   const { session, profile, refreshProfile, signOut } = useAuth();
   const { stats } = useStats();
   const updateProfile = useUpdateProfile();
+  const deleteAccount = useDeleteAccount();
 
   const [editing, setEditing] = useState<EditField | null>(null);
   const [draftText, setDraftText] = useState('');
@@ -87,6 +89,41 @@ export default function ProfileScreen() {
       { text: 'Annuler', style: 'cancel' },
       { text: 'Se déconnecter', style: 'destructive', onPress: () => signOut() },
     ]);
+  }
+
+  // Suppression de compte : irréversible → double confirmation.
+  function confirmDeleteAccount() {
+    if (deleteAccount.isPending) return;
+    Alert.alert(
+      'Supprimer le compte',
+      'Cette action est définitive. Votre profil, votre historique d’analyses et vos images seront supprimés et ne pourront pas être récupérés.',
+      [
+        { text: 'Annuler', style: 'cancel' },
+        { text: 'Continuer', style: 'destructive', onPress: askFinalDeleteConfirm },
+      ]
+    );
+  }
+
+  function askFinalDeleteConfirm() {
+    Alert.alert('Confirmer la suppression', 'Voulez-vous vraiment supprimer définitivement votre compte ?', [
+      { text: 'Annuler', style: 'cancel' },
+      { text: 'Supprimer définitivement', style: 'destructive', onPress: runDeleteAccount },
+    ]);
+  }
+
+  async function runDeleteAccount() {
+    if (!session?.user) return;
+    try {
+      await deleteAccount.mutateAsync(session.user.id);
+      // Le compte auth est supprimé (JWT invalidé) : on nettoie la session
+      // locale. L'AuthGate redirige alors automatiquement vers /login.
+      await signOut();
+    } catch (e) {
+      Alert.alert(
+        'Suppression impossible',
+        e instanceof Error ? e.message : 'Une erreur est survenue. Réessayez plus tard.'
+      );
+    }
   }
 
   const conditionsText =
@@ -237,7 +274,7 @@ export default function ProfileScreen() {
             }
           />
           <PressableScale onPress={confirmSignOut} scaleTo={0.98} haptic>
-            <View className="flex-row items-center gap-3 px-4 py-4">
+            <View className="flex-row items-center gap-3 px-4 py-4 border-b border-border/60">
               <View className="w-9 h-9 rounded-xl bg-danger/15 items-center justify-center">
                 <LogOut size={18} color={colors.danger} />
               </View>
@@ -245,7 +282,29 @@ export default function ProfileScreen() {
               <ChevronRight size={18} color={colors.subtle} />
             </View>
           </PressableScale>
+
+          <PressableScale
+            onPress={confirmDeleteAccount}
+            scaleTo={0.98}
+            haptic
+            disabled={deleteAccount.isPending}>
+            <View className="flex-row items-center gap-3 px-4 py-4">
+              <View className="w-9 h-9 rounded-xl bg-danger/15 items-center justify-center">
+                <Trash2 size={18} color={colors.danger} />
+              </View>
+              <Text className="text-danger font-semibold flex-1">Supprimer mon compte</Text>
+              {deleteAccount.isPending ? (
+                <ActivityIndicator size="small" color={colors.danger} />
+              ) : (
+                <ChevronRight size={18} color={colors.subtle} />
+              )}
+            </View>
+          </PressableScale>
         </View>
+
+        <Text className="text-subtle text-xs text-center mt-3 px-6">
+          La suppression du compte efface définitivement votre profil, votre historique et vos images.
+        </Text>
       </ScrollView>
 
       {/* Modal d'édition */}
