@@ -40,33 +40,33 @@ des **recommandations personnalisées** selon vos conditions de santé
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="./mobile/assets/images/screenshots/a.png" width="80" />
+  <img src="./mobile/assets/images/screenshots/a.png" width="180" />
   &nbsp;&nbsp;
-  <img src="./mobile/assets/images/screenshots/b.png" width="80" />
+  <img src="./mobile/assets/images/screenshots/b.png" width="180" />
   &nbsp;&nbsp;
-  <img src="./mobile/assets/images/screenshots/c.png" width="80" />
+  <img src="./mobile/assets/images/screenshots/c.png" width="180" />
   &nbsp;&nbsp;
-  <img src="./mobile/assets/images/screenshots/d.png" width="80" />
+  <img src="./mobile/assets/images/screenshots/d.png" width="180" />
 </p>
 
 <p align="center">
-  <img src="./mobile/assets/images/screenshots/e.png" width="80" />
+  <img src="./mobile/assets/images/screenshots/e.png" width="180" />
   &nbsp;&nbsp;
-  <img src="./mobile/assets/images/screenshots/f.png" width="80" />
+  <img src="./mobile/assets/images/screenshots/f.png" width="180" />
   &nbsp;&nbsp;
-  <img src="./mobile/assets/images/screenshots/g.png" width="80" />
+  <img src="./mobile/assets/images/screenshots/g.png" width="180" />
   &nbsp;&nbsp;
-  <img src="./mobile/assets/images/screenshots/h.png" width="80" />
+  <img src="./mobile/assets/images/screenshots/h.png" width="180" />
 </p>
 
 <p align="center">
-  <img src="./mobile/assets/images/screenshots/i.png" width="80" />
+  <img src="./mobile/assets/images/screenshots/i.png" width="180" />
   &nbsp;&nbsp;
-  <img src="./mobile/assets/images/screenshots/j.png" width="80" />
+  <img src="./mobile/assets/images/screenshots/j.png" width="180" />
   &nbsp;&nbsp;
-  <img src="./mobile/assets/images/screenshots/k.png" width="80" />
+  <img src="./mobile/assets/images/screenshots/k.png" width="180" />
   &nbsp;&nbsp;
-  <img src="./mobile/assets/images/screenshots/l.png" width="80" />
+  <img src="./mobile/assets/images/screenshots/l.png" width="180" />
 </p>
 
 ---
