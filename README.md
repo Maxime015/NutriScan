@@ -40,13 +40,13 @@ des **recommandations personnalisées** selon vos conditions de santé
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="./mobile/assets/images/screenshots/a.png" width="245" />
+  <img src="./mobile/assets/images/screenshots/a.png" width="240" />
   &nbsp;&nbsp;
-  <img src="./mobile/assets/images/screenshots/b.png" width="245" />
+  <img src="./mobile/assets/images/screenshots/b.png" width="240" />
   &nbsp;&nbsp;
-  <img src="./mobile/assets/images/screenshots/c.png" width="245" />
+  <img src="./mobile/assets/images/screenshots/c.png" width="240" />
   &nbsp;&nbsp;
-  <img src="./mobile/assets/images/screenshots/d.png" width="245" />
+  <img src="./mobile/assets/images/screenshots/d.png" width="240" />
 </p>
 
 <p align="center">
