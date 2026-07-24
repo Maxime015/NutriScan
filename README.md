@@ -41,22 +41,22 @@ des **recommandations personnalisées** selon vos conditions de santé
 
 <table>
   <tr>
-    <td><img src="./mobile/assets/images/screenshots/a.png" width="24%" /></td>
-    <td><img src="./mobile/assets/images/screenshots/b.png" width="24%" /></td>
-    <td><img src="./mobile/assets/images/screenshots/c.png" width="24%" /></td>
-    <td><img src="./mobile/assets/images/screenshots/d.png" width="24%" /></td>
+    <td><img src="./mobile/assets/images/screenshots/a.png" width="23%" /></td>
+    <td><img src="./mobile/assets/images/screenshots/b.png" width="23%" /></td>
+    <td><img src="./mobile/assets/images/screenshots/c.png" width="23%" /></td>
+    <td><img src="./mobile/assets/images/screenshots/d.png" width="23%" /></td>
   </tr>
   <tr>
-    <td><img src="./mobile/assets/images/screenshots/e.png" width="24%" /></td>
-    <td><img src="./mobile/assets/images/screenshots/f.png" width="24%" /></td>
-    <td><img src="./mobile/assets/images/screenshots/g.png" width="24%" /></td>
-    <td><img src="./mobile/assets/images/screenshots/h.png" width="24%" /></td>
+    <td><img src="./mobile/assets/images/screenshots/e.png" width="23%" /></td>
+    <td><img src="./mobile/assets/images/screenshots/f.png" width="23%" /></td>
+    <td><img src="./mobile/assets/images/screenshots/g.png" width="23%" /></td>
+    <td><img src="./mobile/assets/images/screenshots/h.png" width="23%" /></td>
   </tr>
   <tr>
-    <td><img src="./mobile/assets/images/screenshots/i.png" width="24%" /></td>
-    <td><img src="./mobile/assets/images/screenshots/j.png" width="24%" /></td>
-    <td><img src="./mobile/assets/images/screenshots/k.png" width="24%" /></td>
-    <td><img src="./mobile/assets/images/screenshots/l.png" width="24%" /></td>
+    <td><img src="./mobile/assets/images/screenshots/i.png" width="23%" /></td>
+    <td><img src="./mobile/assets/images/screenshots/j.png" width="23%" /></td>
+    <td><img src="./mobile/assets/images/screenshots/k.png" width="23%" /></td>
+    <td><img src="./mobile/assets/images/screenshots/l.png" width="23%" /></td>
   </tr>
 </table>
 
