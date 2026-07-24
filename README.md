@@ -34,30 +34,29 @@ des **recommandations personnalisées** selon vos conditions de santé
 - ❤️ Fournit des conseils personnalisés en fonction des problèmes de santé  
 - 📊 Propose des recommandations d'utilisation intelligentes (**à consommer quotidiennement / à limiter / à éviter**)  
 
-
 ---
 
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="./mobile/assets/images/screenshots/a.png" width="24%" />
-  <img src="./mobile/assets/images/screenshots/b.png" width="24%" />
-  <img src="./mobile/assets/images/screenshots/c.png" width="24%" />
-  <img src="./mobile/assets/images/screenshots/d.png" width="24%" />
+  <img src="./mobile/assets/images/screenshots/a.png" width="23.5%" />
+  <img src="./mobile/assets/images/screenshots/b.png" width="23.5%" />
+  <img src="./mobile/assets/images/screenshots/c.png" width="23.5%" />
+  <img src="./mobile/assets/images/screenshots/d.png" width="23.5%" />
 </p>
 
 <p align="center">
-  <img src="./mobile/assets/images/screenshots/e.png" width="24%" />
-  <img src="./mobile/assets/images/screenshots/f.png" width="24%" />
-  <img src="./mobile/assets/images/screenshots/g.png" width="24%" />
-  <img src="./mobile/assets/images/screenshots/h.png" width="24%" />
+  <img src="./mobile/assets/images/screenshots/e.png" width="23.5%" />
+  <img src="./mobile/assets/images/screenshots/f.png" width="23.5%" />
+  <img src="./mobile/assets/images/screenshots/g.png" width="23.5%" />
+  <img src="./mobile/assets/images/screenshots/h.png" width="23.5%" />
 </p>
 
 <p align="center">
-  <img src="./mobile/assets/images/screenshots/i.png" width="24%" />
-  <img src="./mobile/assets/images/screenshots/j.png" width="24%" />
-  <img src="./mobile/assets/images/screenshots/k.png" width="24%" />
-  <img src="./mobile/assets/images/screenshots/l.png" width="24%" />
+  <img src="./mobile/assets/images/screenshots/i.png" width="23.5%" />
+  <img src="./mobile/assets/images/screenshots/j.png" width="23.5%" />
+  <img src="./mobile/assets/images/screenshots/k.png" width="23.5%" />
+  <img src="./mobile/assets/images/screenshots/l.png" width="23.5%" />
 </p>
 
 ---
